@@ -1,0 +1,16 @@
+{
+  "name": "note-taker",
+  "version": "1.0.0",
+  "description": "An application that can be used to write, save, and delete notes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "MK White",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  }
+}
