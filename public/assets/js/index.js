@@ -52,7 +52,6 @@ $(document).ready(function() {
 
   // Get the note data from the inputs, save it to the db and update the view
   var handleNoteSave = function() {
-    console.log("this button works");
     var newNote = {
       title: $noteTitle.val(),
       text: $noteText.val()
