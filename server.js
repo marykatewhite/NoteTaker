@@ -32,15 +32,20 @@ app.post("/api/notes", function(req, res) {
     element.id = i + 1;
   });
   fs.writeFileSync("db.json", JSON.stringify(notes));
+  res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
 
 // DELETE
 app.delete("/api/notes/:id", function(req, res) {
   const deletedID = req.params.id;
-  const deletedNote = notesInfo.findIndex((deletedID));
-  notesInfo.splice(deletedNote, 1);
+  console.log(notes);
+  const deletedNote = notes.findIndex(function(note){
+    return note.id == deletedID
+  });
+  notes.splice(deletedNote, 1);
   let newDB = JSON.stringify(notes);
-  fs.writeFile('db.json', newDB);
+  fs.writeFileSync("db.json", newDB);
+  res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
 
 // LISTENER
